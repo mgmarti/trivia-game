@@ -1,16 +1,18 @@
-$(document).ready(function() {
-    $('.question-one').hide();
-    $('.question-two').hide();
-    $('.question-three').hide();
-    $('.question-four').hide();
-    $('.question-five').hide();
+    const quiz = $('#quiz');
+    const results = $('#results');
+    const submit = $('#submit');
 
-    $('.btn').on('click', () => {
-        $('.click-start').hide();
-        $('.question-one').show();
-        $('.question-two').hide();
-        $('.question-three').hide();
-        $('.question-four').hide();
-        $('.question-five').hide();
-    });
+
+function buildQUiz() {
+
+}
+
+function showResults() {
+
+}
+
+buildQUiz();
+
+$('#submit').on('click', () => {
+    $('#results').show();
 });
