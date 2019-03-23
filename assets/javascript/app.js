@@ -18,7 +18,7 @@ $(document).ready(function() {
     //display at start
     $('#answer-space').hide();
     $('#question-space').hide();
-
+    
 
     //question one
     $('#click-start').on('click', () => {
@@ -27,11 +27,12 @@ $(document).ready(function() {
         $('#question-space').html(triviaQuestions[0]);
         $('#answer-space').show();
         $('#option-one').html(optionOne[0]);
-        $('#option-two').html(optionTwo[0]);
+        $('#option-two').html(optionTwo[0]);bv
         $('#option-three').html(optionThree[0]);
         $('#option-four').html(optionFour[0]);
     });
-
+    
+    //question two
     $('#option-two').on('click', () => {
         // $('#answer-space').show();
         // $('#answer-space').html("Wrong! answer is...");
@@ -44,6 +45,7 @@ $(document).ready(function() {
         $('#option-four').html(optionFour[1]);
     });
     
+    //question three
     $('#option-four').on('click', () => {
 
         $('#question-space').show();
@@ -54,13 +56,5 @@ $(document).ready(function() {
         $('#option-three').html(optionThree[2]);
         $('#option-four').html(optionFour[2]);
     });
-    });
-
-    //question two
-
-    //question three
-
-    //question four
-
-    //question five
-
+    
+});
