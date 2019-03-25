@@ -4,6 +4,8 @@ $(document).ready(function() {
     var correctAnswers = 0;
     var incorrectAnswers = 0;
     var unanswered = 0;
+    var userChoice;
+    var userGuess;
 
 
     const triviaQuestions = [
@@ -15,7 +17,7 @@ $(document).ready(function() {
         },
         {
             question: "What's the name of Batman's loyal butler?",
-            choices: ["James Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
+            choices: ["Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
             answer: 2,
             display: ""
         },
@@ -37,26 +39,28 @@ $(document).ready(function() {
             answer: 0,
             display: ""
         }];
-console.log(triviaQuestions[0].question);
-console.log(triviaQuestions[0].choices);
-console.log(triviaQuestions[0].answer);
 
 
+//start game
+$('#answer-space').hide();
+
+    $('#click-start').on('click', () => { 
+        $('#click-start').hide();
+        renderQuestions();
+        renderAnswers();
+        runTimer();
+    });
+
+
+//functions
 function renderQuestions() {
     $('#question-space').text(triviaQuestions[questionCount].question);
+    $('#answer-space').show();
     $('#option-one').text(triviaQuestions[questionCount].choices[0]);
     $('#option-two').text(triviaQuestions[questionCount].choices[1]);
     $('#option-three').text(triviaQuestions[questionCount].choices[2]);
     $('#option-four').text(triviaQuestions[questionCount].choices[3]);
 }
-
-    $('#click-start').on('click', () => { 
-        renderQuestions();
-
-    });
-
-
-
 
 
 
@@ -82,7 +86,7 @@ function renderQuestions() {
 //         $('#question-space').html(triviaQuestions[0]);
 //         $('#answer-space').show();
 //         $('#option-one').html(optionOne[0]);
-//         $('#option-two').html(optionTwo[0]);bv
+//         $('#option-two').html(optionTwo[0]);
 //         $('#option-three').html(optionThree[0]);
 //         $('#option-four').html(optionFour[0]);
 //     });
