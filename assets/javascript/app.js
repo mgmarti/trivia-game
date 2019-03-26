@@ -4,9 +4,6 @@ $(document).ready(function() {
     var correctAnswers = 0;
     var incorrectAnswers = 0;
     var unanswered = 0;
-    var userChoice;
-    var userGuess;
-
 
     const triviaQuestions = [
         {
@@ -41,14 +38,26 @@ $(document).ready(function() {
         }];
 
 
+
+// var questionArray = [
+//     "What movie has a pirate named Jack Sparrow?",
+//     "What's the name of Batman's loyal butler?",
+//     "What kind of creature is Smaug in The Hobbit Trilogy?",
+//     "In Transformers, who is the leader of the Autobots?",
+//     "What movie features Jack Nicholson as the caretaker of the Overlook Hotel?"
+// ];
+
+const answerArray = ["Pirates of The Caribbean", "Alfred Pennyworth", "Dragon", "Optimus Prime", "The Shining"];
+const answerIndex = 0;
+console.log(answerArray);
+
+
 //start game
 $('#answer-space').hide();
 
     $('#click-start').on('click', () => { 
         $('#click-start').hide();
         renderQuestions();
-        renderAnswers();
-        runTimer();
     });
 
 
@@ -61,6 +70,20 @@ function renderQuestions() {
     $('#option-three').text(triviaQuestions[questionCount].choices[2]);
     $('#option-four').text(triviaQuestions[questionCount].choices[3]);
 }
+
+$('.btn').click(function() {
+    if (answerArray < triviaQuestions.length)
+        var buttonValue = answerArray[answerIndex];
+        console.log(buttonValue);
+
+        if(buttonValue === triviaQuestions[questionCount].answer) {
+            console.log('correct!')
+        }
+});
+
+
+
+
 
 
 
