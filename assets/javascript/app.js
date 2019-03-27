@@ -14,7 +14,7 @@ $(document).ready(function() {
         },
         {
             question: "What's the name of Batman's loyal butler?",
-            choices: ["Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
+            choices: ["James Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
             answer: 2,
             display: ""
         },
@@ -37,21 +37,6 @@ $(document).ready(function() {
             display: ""
         }];
 
-
-
-// var questionArray = [
-//     "What movie has a pirate named Jack Sparrow?",
-//     "What's the name of Batman's loyal butler?",
-//     "What kind of creature is Smaug in The Hobbit Trilogy?",
-//     "In Transformers, who is the leader of the Autobots?",
-//     "What movie features Jack Nicholson as the caretaker of the Overlook Hotel?"
-// ];
-
-const answerArray = ["Pirates of The Caribbean", "Alfred Pennyworth", "Dragon", "Optimus Prime", "The Shining"];
-const answerIndex = 0;
-console.log(answerArray);
-
-
 //start game
 $('#answer-space').hide();
 
@@ -65,22 +50,34 @@ $('#answer-space').hide();
 function renderQuestions() {
     $('#question-space').text(triviaQuestions[questionCount].question);
     $('#answer-space').show();
-    $('#option-one').text(triviaQuestions[questionCount].choices[0]);
-    $('#option-two').text(triviaQuestions[questionCount].choices[1]);
-    $('#option-three').text(triviaQuestions[questionCount].choices[2]);
-    $('#option-four').text(triviaQuestions[questionCount].choices[3]);
+    $('#option-zero').text(triviaQuestions[questionCount].choices[0]);
+    $('#option-one').text(triviaQuestions[questionCount].choices[1]);
+    $('#option-two').text(triviaQuestions[questionCount].choices[2]);
+    $('#option-three').text(triviaQuestions[questionCount].choices[3]);
 }
 
-$('.btn').click(function() {
-    if (answerArray < triviaQuestions.length)
-        var buttonValue = answerArray[answerIndex];
-        console.log(buttonValue);
+const answerCount = 0;
 
-        if(buttonValue === triviaQuestions[questionCount].answer) {
-            console.log('correct!')
-        }
+$('#option-zero').click(function() {
+        console.log('click');
+       
+  
+});
+$('#option-one').click(function() {
+        console.log('click');
+  
+});
+$('#option-two').click(function() {
+        console.log('click');
+  
+});
+$('#option-three').click(function() {
+        console.log('click');
+  
 });
 
+
+ 
 
 
 
