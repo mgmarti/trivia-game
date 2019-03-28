@@ -5,7 +5,6 @@ $(document).ready(function() {
     var incorrectAnswers = 0;
     var unanswered = 0;
     var userAnswer;
-    var answered;
 
     const triviaQuestions = [
         {
@@ -58,8 +57,7 @@ function renderQuestions() {
     $('#option-three').text(triviaQuestions[questionCount].choices[3]);
 }
 
-const correctIndex = triviaQuestions.answer[answerCount];
-const answerCount = 0;
+const correctIndex = triviaQuestions[questionCount].answer;
 console.log(correctIndex);
 
 
@@ -67,9 +65,9 @@ console.log(correctIndex);
 
 $('#option-zero').click(function() {
     // console.log('click');
-    if((userAnswer === correctIndex) && (answered === true)) {
-    } else if (userAnswer !== correctIndex) { 
-        console.log('wrong');
+    if(userAnswer === correctIndex) {
+    // } else if (userAnswer !== correctIndex) { 
+    //     console.log('wrong');
     }
     console.log('test');
 });
@@ -89,4 +87,63 @@ $('#option-three').click(function() {
 });
 
 
+ 
+
+
+
+
+
+
+//     var triviaQuestions = ["What movie has a pirate named Jack Sparrow?", "What's the name of Batman's loyal butler?",
+//     "What kind of creature is Smaug in The Hobbit Trilogy?", "In Transformers, who is the leader of the Autobots?", 
+//     "What movie features Jack Nicholson as the caretaker of the Overlook Hotel?"];
+
+//     var answers = ["Pirates of The Caribbean",  ];
+//     var optionOne = ["Treasure Island", "James Stevens", "Orc", "Optimus Prime"];
+//     var optionTwo = ["Pirates of The Caribbean", "Otis", "Elf", "Megatron"];
+//     var optionThree = ["Hook", "Norman Osborn", "Dragon", "Ironhide"];
+//     var optionFour = ["Princess Bride", "Alfred Pennyworth", "Dwarf", "Bumblebee"];
+
+//     //display at start
+//     $('#answer-space').hide();
+//     $('#question-space').hide();
+    
+
+//     //question one
+//     $('#click-start').on('click', () => {
+//         $('#click-start').hide();
+//         $('#question-space').show();
+//         $('#question-space').html(triviaQuestions[0]);
+//         $('#answer-space').show();
+//         $('#option-one').html(optionOne[0]);
+//         $('#option-two').html(optionTwo[0]);
+//         $('#option-three').html(optionThree[0]);
+//         $('#option-four').html(optionFour[0]);
+//     });
+    
+//     //question two
+//     $('#option-two').on('click', () => {
+//         // $('#answer-space').show();
+//         // $('#answer-space').html("Wrong! answer is...");
+//         $('#question-space').show();
+//         $('#question-space').html(triviaQuestions[1]);
+//         $('#answer-space').show();
+//         $('#option-one').html(optionOne[1]);
+//         $('#option-two').html(optionTwo[1]);
+//         $('#option-three').html(optionThree[1]);
+//         $('#option-four').html(optionFour[1]);
+//     });
+    
+//     //question three
+//     $('#option-four').on('click', () => {
+
+//         $('#question-space').show();
+//         $('#question-space').html(triviaQuestions[2]);
+//         $('#answer-space').show();
+//         $('#option-one').html(optionOne[2]);
+//         $('#option-two').html(optionTwo[2]);
+//         $('#option-three').html(optionThree[2]);
+//         $('#option-four').html(optionFour[2]);
+//     });
+    
 });
