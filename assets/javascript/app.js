@@ -1,149 +1,77 @@
-$(document).ready(function() {
-    //variables
-    var questionCount = 0;
-    var correctAnswers = 0;
-    var incorrectAnswers = 0;
-    var unanswered = 0;
-    var userAnswer;
+$("#start").on("click", function () {
+    $("#start").remove();
+});
 
-    const triviaQuestions = [
-        {
-            question: "What movie has a pirate named Jack Sparrow?",
-            choices: ["Treasure Island", "Pirates of The Caribbean", "Hook", "Princess Bride"],
-            answer: 1,
-            display: ""
-        },
-        {
-            question: "What's the name of Batman's loyal butler?",
-            choices: ["James Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
-            answer: 2,
-            display: ""
-        },
-        {
-            question: "What kind of creature is Smaug in The Hobbit Trilogy?",
-            choices: ["Orc", "Elf", "Dwarf", "Dragon"],
-            answer: 3,
-            display: ""
-        },
-        {
-            question: "In Transformers, who is the leader of the Autobots?",
-            choices: ["Optimus Prime", "Megatron", "Ironhide", "Bumblebee"],
-            answer: 0,
-            display: ""
-        },
-        {
-            question: "What movie features Jack Nicholson as the caretaker of the Overlook Hotel?",
-            choices: ["The Shining", "Batman", "Mars Attacks!", "Anger Management"],
-            answer: 0,
-            display: ""
-        }];
+const triviaQuestions = [{
+        question: "What movie has a pirate named Jack Sparrow?",
+        choices: ["Treasure Island", "Pirates of The Caribbean", "Hook", "Princess Bride"],
+        answer: "Pirates of The Caribbean",
+        image: "assets/images/jack-sparrow.gif"
+    },
+    {
+        question: "What's the name of Batman's loyal butler?",
+        choices: ["James Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
+        answer: "Alfred Pennyworth",
+        image: ""
+    },
+    {
+        question: "What kind of creature is Smaug in The Hobbit Trilogy?",
+        choices: ["Orc", "Elf", "Dwarf", "Dragon"],
+        answer: "Dragon",
+        image: ""
+    },
+    {
+        question: "In Transformers, who is the leader of the Autobots?",
+        choices: ["Optimus Prime", "Megatron", "Ironhide", "Bumblebee"],
+        answer: "Optimus Prime",
+        image: ""
+    },
+    {
+        question: "What movie features Jack Nicholson as the caretaker of the Overlook Hotel?",
+        choices: ["The Shining", "Batman", "Mars Attacks!", "Anger Management"],
+        answer: "The Shining",
+        image: ""
+    }
+];
 
-//start game
-$('#answer-space').hide();
+var game = {
+    questions:questions,
+    currentQuestion:0,
+    counter:30,
+    correct:0,
+    incorrect:0,
+    countdown: function() {
+         game.counter--;
+         $("#counter").html(game.counter);
+         if(game.counter<=0){
+             console.log("Time Up!");
+             game.timesUp();
+         }
+    },
+    loadQuestion: function() {
 
-    $('#click-start').on('click', () => { 
-        $('#click-start').hide();
-        renderQuestions();
-    });
+    },
+    nextQuestion: function() {
 
+    },
+    timesUp: function() {
 
-//functions
-function renderQuestions() {
-    $('#question-space').text(triviaQuestions[questionCount].question);
-    $('#answer-space').show();
-    $('#option-zero').text(triviaQuestions[questionCount].choices[0]);
-    $('#option-one').text(triviaQuestions[questionCount].choices[1]);
-    $('#option-two').text(triviaQuestions[questionCount].choices[2]);
-    $('#option-three').text(triviaQuestions[questionCount].choices[3]);
+    },
+    results: function() {
+
+    },
+    clicked: function() {
+
+    },
+    answeredCorrect: function() {
+
+    },
+    answeredIncorrect: function() {
+
+    },
+    reset: function() {
+
+    }
 }
 
-const correctIndex = triviaQuestions[questionCount].answer;
-console.log(correctIndex);
 
-
-
-
-$('#option-zero').click(function() {
-    // console.log('click');
-    if(userAnswer === correctIndex) {
-    // } else if (userAnswer !== correctIndex) { 
-    //     console.log('wrong');
-    }
-    console.log('test');
-});
-
-$('#option-one').click(function() {
-        console.log('click');
-});
-
-$('#option-two').click(function() {
-        console.log('click');
-  
-});
-
-$('#option-three').click(function() {
-        console.log('click');
-  
-});
-
-
- 
-
-
-
-
-
-
-//     var triviaQuestions = ["What movie has a pirate named Jack Sparrow?", "What's the name of Batman's loyal butler?",
-//     "What kind of creature is Smaug in The Hobbit Trilogy?", "In Transformers, who is the leader of the Autobots?", 
-//     "What movie features Jack Nicholson as the caretaker of the Overlook Hotel?"];
-
-//     var answers = ["Pirates of The Caribbean",  ];
-//     var optionOne = ["Treasure Island", "James Stevens", "Orc", "Optimus Prime"];
-//     var optionTwo = ["Pirates of The Caribbean", "Otis", "Elf", "Megatron"];
-//     var optionThree = ["Hook", "Norman Osborn", "Dragon", "Ironhide"];
-//     var optionFour = ["Princess Bride", "Alfred Pennyworth", "Dwarf", "Bumblebee"];
-
-//     //display at start
-//     $('#answer-space').hide();
-//     $('#question-space').hide();
-    
-
-//     //question one
-//     $('#click-start').on('click', () => {
-//         $('#click-start').hide();
-//         $('#question-space').show();
-//         $('#question-space').html(triviaQuestions[0]);
-//         $('#answer-space').show();
-//         $('#option-one').html(optionOne[0]);
-//         $('#option-two').html(optionTwo[0]);
-//         $('#option-three').html(optionThree[0]);
-//         $('#option-four').html(optionFour[0]);
-//     });
-    
-//     //question two
-//     $('#option-two').on('click', () => {
-//         // $('#answer-space').show();
-//         // $('#answer-space').html("Wrong! answer is...");
-//         $('#question-space').show();
-//         $('#question-space').html(triviaQuestions[1]);
-//         $('#answer-space').show();
-//         $('#option-one').html(optionOne[1]);
-//         $('#option-two').html(optionTwo[1]);
-//         $('#option-three').html(optionThree[1]);
-//         $('#option-four').html(optionFour[1]);
-//     });
-    
-//     //question three
-//     $('#option-four').on('click', () => {
-
-//         $('#question-space').show();
-//         $('#question-space').html(triviaQuestions[2]);
-//         $('#answer-space').show();
-//         $('#option-one').html(optionOne[2]);
-//         $('#option-two').html(optionTwo[2]);
-//         $('#option-three').html(optionThree[2]);
-//         $('#option-four').html(optionFour[2]);
-//     });
-    
-});
