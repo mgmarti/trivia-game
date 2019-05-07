@@ -1,77 +1,79 @@
 $("#start").on("click", function () {
-    $("#start").remove();
+    for(var i = 0; i<questions.length; i++){
+        $("#subwrapper").append("<h2>"+questions[i].question+"</h2>");
+        for(var j = 0;j<questions[i].answers.length; j++) {
+            $("#subwrapper").append("<input type='radio' name='question-"+i+"' value='"+questions[i].answers[j]+"'>"+questions[i].answers[j])
+        }
+    }
 });
 
-const triviaQuestions = [{
+var questions = [{
         question: "What movie has a pirate named Jack Sparrow?",
-        choices: ["Treasure Island", "Pirates of The Caribbean", "Hook", "Princess Bride"],
-        answer: "Pirates of The Caribbean",
-        image: "assets/images/jack-sparrow.gif"
+        answers: ["Treasure Island", "Pirates of The Caribbean", "Hook", "Princess Bride"],
+        correctAnswer: "Pirates of The Caribbean"
     },
     {
         question: "What's the name of Batman's loyal butler?",
-        choices: ["James Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
-        answer: "Alfred Pennyworth",
-        image: ""
+        answers: ["James Stevens", "Otis", "Alfred Pennyworth", "Norman Osborn"],
+        correctAnswer: "Alfred Pennyworth"
     },
     {
         question: "What kind of creature is Smaug in The Hobbit Trilogy?",
-        choices: ["Orc", "Elf", "Dwarf", "Dragon"],
-        answer: "Dragon",
-        image: ""
+        answers: ["Orc", "Elf", "Dwarf", "Dragon"],
+        correctAnswer: "Dragon"
     },
     {
         question: "In Transformers, who is the leader of the Autobots?",
-        choices: ["Optimus Prime", "Megatron", "Ironhide", "Bumblebee"],
-        answer: "Optimus Prime",
-        image: ""
+        answers: ["Optimus Prime", "Megatron", "Ironhide", "Bumblebee"],
+        correctAnswer: "Optimus Prime"
     },
     {
         question: "What movie features Jack Nicholson as the caretaker of the Overlook Hotel?",
-        choices: ["The Shining", "Batman", "Mars Attacks!", "Anger Management"],
-        answer: "The Shining",
-        image: ""
+        answers: ["The Shining", "Batman", "Mars Attacks!", "Anger Management"],
+        correctAnswer: "The Shining"
     }
 ];
 
-var game = {
-    questions:questions,
-    currentQuestion:0,
-    counter:30,
-    correct:0,
-    incorrect:0,
-    countdown: function() {
-         game.counter--;
-         $("#counter").html(game.counter);
-         if(game.counter<=0){
-             console.log("Time Up!");
-             game.timesUp();
-         }
-    },
-    loadQuestion: function() {
+// var game = {
+//     questions: questions,
+//     currentQuestion: 0,
+//     counter: 30,
+//     correct: 0,
+//     incorrect: 0,
+//     countdown: function () {
+//         game.counter--; //lowers counter
+//         $("#counter").html(game.counter); //posts counter to page
+//         if (game.counter <= 0) { //checks if counter is less than or equal to 0
+//             console.log("Time Up!");
+//             game.timesUp();
+//         }
+//     },
+//     loadQuestion: function () {
+//         timer = setInterval(game.countdown, 1000) //every 1000 ms the countdown function will run
+//         $("#subwrapper").html("<h2>"+questions[game.currentQuestion].question+"</h2>");
+//         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++); {
+//             $("#subwrapper").append('<button class="answer-button" id="button-'+i+'f" data-name="'+questions[game.currentQuestion].answers[i]+'">'+questions[game.currentQuestion].answers[i]+'</button>');
+//         }
+//     },
+//     nextQuestion: function () {
 
-    },
-    nextQuestion: function() {
+//     },
+//     timesUp: function () {
 
-    },
-    timesUp: function() {
+//     },
+//     results: function () {
 
-    },
-    results: function() {
+//     },
+//     clicked: function () {
 
-    },
-    clicked: function() {
+//     },
+//     answeredCorrect: function () {
 
-    },
-    answeredCorrect: function() {
+//     },
+//     answeredIncorrect: function () {
 
-    },
-    answeredIncorrect: function() {
+//     },
+//     reset: function () {
 
-    },
-    reset: function() {
-
-    }
-}
-
-
+//     }
+// }
