@@ -1,8 +1,9 @@
 $("#start").on("click", function () {
-    for(var i = 0; i<questions.length; i++){
-        $("#subwrapper").append("<h2>"+questions[i].question+"</h2>");
-        for(var j = 0;j<questions[i].answers.length; j++) {
-            $("#subwrapper").append("<input type='radio' name='question-"+i+"' value='"+questions[i].answers[j]+"'>"+questions[i].answers[j])
+    $("#start").remove();
+    for (var i = 0; i < questions.length; i++) {
+        $("#subwrapper").append("<h2>" + questions[i].question + "</h2>");
+        for (var j = 0; j < questions[i].answers.length; j++) {
+            $("#subwrapper").append("<input type='radio' name='question-" + i + "' value='" + questions[i].answers[j] + "'>" + questions[i].answers[j])
         }
     }
 });
@@ -34,46 +35,17 @@ var questions = [{
     }
 ];
 
-// var game = {
-//     questions: questions,
-//     currentQuestion: 0,
-//     counter: 30,
-//     correct: 0,
-//     incorrect: 0,
-//     countdown: function () {
-//         game.counter--; //lowers counter
-//         $("#counter").html(game.counter); //posts counter to page
-//         if (game.counter <= 0) { //checks if counter is less than or equal to 0
-//             console.log("Time Up!");
-//             game.timesUp();
-//         }
-//     },
-//     loadQuestion: function () {
-//         timer = setInterval(game.countdown, 1000) //every 1000 ms the countdown function will run
-//         $("#subwrapper").html("<h2>"+questions[game.currentQuestion].question+"</h2>");
-//         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++); {
-//             $("#subwrapper").append('<button class="answer-button" id="button-'+i+'f" data-name="'+questions[game.currentQuestion].answers[i]+'">'+questions[game.currentQuestion].answers[i]+'</button>');
-//         }
-//     },
-//     nextQuestion: function () {
 
-//     },
-//     timesUp: function () {
-
-//     },
-//     results: function () {
-
-//     },
-//     clicked: function () {
-
-//     },
-//     answeredCorrect: function () {
-
-//     },
-//     answeredIncorrect: function () {
-
-//     },
-//     reset: function () {
-
-//     }
-// }
+let game = {
+    correct: 0,
+    incorrect: 0,
+    timer: 120,
+    countdown: function () {
+        game.counter--;
+        $("#counter").html(game.counter);
+        if (game.counter === 0) {
+            console.log("times up");
+            game.done();
+        }
+    }
+}
