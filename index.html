@@ -5,17 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Game</title>
+    <title>Movie Trivia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
-    <div id="wrapper">
-        <h1>Trivia Game</h1>
-        <div id="subwrapper">
-            <button id="start">Start</button>
+    <div class="container">
+        <div id="wrapper">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container text-center">
+                    <i class="fas fa-film fa-5x"></i>
+                    <h1 class="display-4">MOVIE TRIVIA</h1>
+                    <hr>
+                    <div id="timer-area" class="text-center"></div>
+                </div>
+            </div>
+            <div id="subwrapper"></div>
+            <div id="start-area" class="text-center">
+                <!-- <button id="start">Start</button> -->
+                <button type="button" id="start" class="btn btn-dark">Start</button>
+
+            </div>
+            <div id="done-area" class="text-center"></div>
         </div>
+
     </div>
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.0.js"

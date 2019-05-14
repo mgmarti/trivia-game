@@ -48,15 +48,15 @@ let game = {
     },
     start: function () {
         timer = setInterval(game.countdown, 1000);
-        $("#subwrapper").prepend("<h2> Time Remaining: <span id='counter'>20</span> Seconds</h2>");
-        $("#start").remove();
+        $("#timer-area").prepend("<h2> Time Remaining: <span id='counter'>20</span> Seconds</h2>");
+        $("#start-area").remove();
         for (var i = 0; i < questions.length; i++) {
             $("#subwrapper").append("<h2>" + questions[i].question + "</h2>");
             for (var j = 0; j < questions[i].answers.length; j++) {
-                $("#subwrapper").append("<input type='radio' name='question-" + i + "' value='" + questions[i].answers[j] + "'>" + questions[i].answers[j])
+                $("#subwrapper").append("<input type='radio' name='question-" + i + "' value='" + questions[i].answers[j] + "'>" + questions[i].answers[j] + "<br>")
             }
         }
-        $("#subwrapper").append("<br><button id='end'>DONE</button>")
+        $("#done-area").append("<br><br><button id='end' class='btn btn-dark'>DONE</button><br><br>")
     },
     done: function () {
         $.each($("input[name='question-1']:checked"), function () {
@@ -96,6 +96,8 @@ let game = {
         });
 
         this.result()
+        $("#end").hide();
+        $("#timer-area").remove();
     },
     result: function () {
         clearInterval(timer); 

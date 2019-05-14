@@ -1,52 +1,17 @@
 body {
-    background-color: rgb(156, 148, 167);
-    }
+    background-color: #efefef;
+}
 
 .jumbotron {
-    font-family: condor, sans-serif;
-    font-weight: 400;
-    font-style: normal; 
-    color: #000000;
-    background-color: white;
+    background-color: #efefef;
+    font-family: 'Anton', sans-serif;
 }
 
-.container {
-    background-color:white;
-    border-radius: 15px;
-    margin-top: 65px;
-    height: 600px;
+#subwrapper {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
 }
 
-#question-space {
-    height: 50px;
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
 .btn {
-    width: 16rem;
-    height: 5rem;
-    margin-top: 10px;
-    margin-right: 5px;
-    background-color: rgb(56, 9, 75);
-    border: none;
-}
-.btn-start {
-    width: 16rem;
-    height: 5rem;
-    margin-top: 10px;
-    margin-right: 5px;
-    background-color: rgb(56, 9, 75);
-    border: none;
-}
-
-.btn:hover {
-    background-color: rgb(101, 17, 134);
-}
-
-.btn:active {
-    background-color: rgb(56, 9, 75);
-}
-
-.btn:visited {
-    background-color: rgb(56, 9, 75);
+    width: 100px;
 }
